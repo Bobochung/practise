@@ -23,9 +23,9 @@ public class HashSetTest2 {
         return result;
     }
 	public static void main(String[] args) {
-		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ?
-		String[] str=new String[100]; 
-		// åˆå§‹åŒ?
+		
+	String[] str=new String[100]; 
+		
         for (int i = 0; i < str.length; i++) {
             str[i] = randomString(2);
         }
