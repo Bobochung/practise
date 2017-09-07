@@ -45,7 +45,7 @@ public class HashSetTest2 {
                 result.add(str[i]);
             }
         }
-        System.out.printf("é‡å¤çš„æœ‰%dä¸?%n", result.size());
+        System.out.printf("重复的有%d个%n", result.size());
         for(String each: result){
             System.out.print(each.toString() + " ");
         }
