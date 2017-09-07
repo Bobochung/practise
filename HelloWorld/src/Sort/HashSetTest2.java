@@ -23,9 +23,9 @@ public class HashSetTest2 {
         return result;
     }
 	public static void main(String[] args) {
-		// TODO 自动生成的方法存�?
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ?
 		String[] str=new String[100]; 
-		// 初始�?
+		// åˆå§‹åŒ?
         for (int i = 0; i < str.length; i++) {
             str[i] = randomString(2);
         }
@@ -40,13 +40,12 @@ public class HashSetTest2 {
         for(int i = 0; i < str.length; i++){
             int originHashSetSize = hSet.size();
             hSet.add(str[i]);
-//            利用HashSet不能插入相同值的特�?�，如果插入的�?�出现过，则长度未改变，此时将这个插入的值加�?
-//            新的结果集中�?
+//            利用HashSet不能添加相同值的特性，如果之前插入过相同的值，则无法插入，长度不会改变。并将此事插入的值添加到结果集中去
             if(hSet.size() == originHashSetSize){
                 result.add(str[i]);
             }
         }
-        System.out.printf("重复的有%d�?%n", result.size());
+        System.out.printf("é‡å¤çš„æœ‰%dä¸?%n", result.size());
         for(String each: result){
             System.out.print(each.toString() + " ");
         }
