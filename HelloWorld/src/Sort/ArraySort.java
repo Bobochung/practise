@@ -1,7 +1,6 @@
 package Sort;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class ArraySort {
 	
@@ -14,7 +13,8 @@ public int[] randomInt(int number,int length){
 	}
 	return arr;
 	
-}	
+}
+
 //	冒泡排序(大的往后移)
 public int[] bubbSort(int[] arr){
 		
@@ -34,7 +34,7 @@ public int[] bubbSort(int[] arr){
 	}
 //	插入排序(小的往前插入)
 	public int[] insertSort(int[] arr){
-		for(int i = 1;i < arr.length; i++)    //   外循环，前面一个元素已经排好序了，所以就只有五个元素需要排序，因此只循环五次
+		for(int i = 1;i < arr.length; i++)    //   外循环，前面一个元素用来比较，所以就只有length-1个元素需要排序，因此下标从1开始
         {
            for(int j = i - 1; j >= 0;j--){  //   这个循环的是需要插入的元素与前面已经排好序的元素进行比较
                          if(arr[ j ] > arr[ j + 1]){    //  判断条件 
