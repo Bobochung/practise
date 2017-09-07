@@ -1,6 +1,8 @@
 package Sort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Node {
 	// 左子节点
@@ -36,6 +38,24 @@ public class Node {
         }
   
     }
+ // 中序遍历所有的节点
+    public List<Object> values() {
+        List<Object> values = new ArrayList<>();
+  
+        // 左节点的遍历结果
+        if (null != leftNode)
+            values.addAll(leftNode.values());
+  
+        // 当前节点
+        values.add(value);
+  
+        // 右节点的遍历结果
+        if (null != rightNode)
+  
+            values.addAll(rightNode.values());
+  
+        return values;
+    }
   
     public static void main(String[] args) {
   
@@ -45,7 +65,7 @@ public class Node {
         for (int number : randoms) {
             roots.add(number);
         }
-        System.out.println(Arrays.toString(randoms));
+        System.out.println(roots.values());
   
     }
 }
