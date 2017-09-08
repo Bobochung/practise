@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArraySort {
 	
-//	Éú ³ÉÖ¸¶¨·¶Î§ÄÚ(0¡ª¡ªnumber)³¤¶ÈÎªlengthµÄËæ»úÊı×é
+//	ç”Ÿ æˆæŒ‡å®šèŒƒå›´å†…(0â€”â€”number)é•¿åº¦ä¸ºlengthçš„éšæœºæ•°ç»„
 	
 public int[] randomInt(int number,int length){
 	int[] arr=new int[length];
@@ -15,15 +15,15 @@ public int[] randomInt(int number,int length){
 	
 }
 
-//	Ã°ÅİÅÅĞò(´óµÄÍùºóÒÆ)
+//	å†’æ³¡æ’åº(å¤§çš„å¾€åç§»)
 public int[] bubbSort(int[] arr){
 		
 	for(int i=0;i<arr.length-1;i++){    
 			for(int j=0;j<arr.length-1-i;j++){ 
-//ÒòÎªÃ¿´Î±È½Ï¶¼°Ñ×î´óµÄÔªËØÌô³öÈ¥ ÏÂÒ»´ÎÍâÑ­»·ºó²»ĞèÒª¸úËû±ÈÁË ÒòÎªÕâ¸öÔªËØÒÑ¾­ÊÇ×î´óµÄ ËùÒÔÃ¿Ò»´ÎÍâÑ­»·±È½Ïºó£¬ÄÚÑ­»·¶¼Ïàµ±ÓÚÉÙÁËÒ»¸öÔªËØ  ËùÒÔÌõ¼şÎªarr.length-1-i
+//å› ä¸ºæ¯æ¬¡æ¯”è¾ƒéƒ½æŠŠæœ€å¤§çš„å…ƒç´ æŒ‘å‡ºå» ä¸‹ä¸€æ¬¡å¤–å¾ªç¯åä¸éœ€è¦è·Ÿä»–æ¯”äº† å› ä¸ºè¿™ä¸ªå…ƒç´ å·²ç»æ˜¯æœ€å¤§çš„ æ‰€ä»¥æ¯ä¸€æ¬¡å¤–å¾ªç¯æ¯”è¾ƒåï¼Œå†…å¾ªç¯éƒ½ç›¸å½“äºå°‘äº†ä¸€ä¸ªå…ƒç´   æ‰€ä»¥æ¡ä»¶ä¸ºarr.length-1-i
 
 		  if(arr[j]>arr[j+1]){
-//ÉèÖÃÁÙÊ±½»»»µÄÊı
+//è®¾ç½®ä¸´æ—¶äº¤æ¢çš„æ•°
 			  int temp=arr[j];
 			  arr[j]=arr[j+1];
 			  arr[j+1]=temp;
@@ -32,36 +32,36 @@ public int[] bubbSort(int[] arr){
 		  }
 		return arr;		
 	}
-//	²åÈëÅÅĞò(Ğ¡µÄÍùÇ°²åÈë)
-	public int[] insertSort(int[] arr){
-		for(int i = 1;i < arr.length; i++)    //   ÍâÑ­»·£¬Ç°ÃæÒ»¸öÔªËØÓÃÀ´±È½Ï£¬ËùÒÔ¾ÍÖ»ÓĞlength-1¸öÔªËØĞèÒªÅÅĞò£¬Òò´ËÏÂ±ê´Ó1¿ªÊ¼
-        {
-           for(int j = i - 1; j >= 0;j--){  //   Õâ¸öÑ­»·µÄÊÇĞèÒª²åÈëµÄÔªËØÓëÇ°ÃæÒÑ¾­ÅÅºÃĞòµÄÔªËØ½øĞĞ±È½Ï
-                         if(arr[ j ] > arr[ j + 1]){    //  ÅĞ¶ÏÌõ¼ş 
-                                       
-                                   int temp = arr[ j ];
-                                   arr[ j ] = arr[ j + 1];
-                                   arr[ j + 1] = temp;
-                                        }
-                     }
-        }
-		
-		return arr;
-		
+//æ’å…¥æ’åºï¼Œå¾€å‰é¢çš„æœ‰åºæ•°ç»„ä¸­æ’å…¥æ–°æ•°æ®
+public int[] insertSort(int[] arr){
+	for (int i = 1; i < arr.length; i++)    //ä»ç¬¬2ä¸ªæ•°æ®å¼€å§‹æ’å…¥  
+      {  
+        int j = i - 1;  
+        int temp = arr[i];    //è®°å½•è¦æ’å…¥çš„æ•°æ®  
+        while (j >= 0 && arr[j] > temp)    //ä»åå‘å‰ï¼Œæ‰¾åˆ°æ¯”å…¶å°çš„æ•°çš„ä½ç½®  
+        {  
+            arr[j+1] = arr[j];    //å‘åæŒªåŠ¨  
+            j--;  
+        }  
+  
+        if (j != i - 1)    //å­˜åœ¨æ¯”å…¶å°çš„æ•°  
+            arr[j+1] = temp;  
+    }
+	return arr;  
 	}
 	
-//	Ñ¡ÔñÅÅĞò
-//	Ã¿´Î±éÀúÕÒµ½Î´ÕÒ¹ıµÄÊı×éÔªËØÖĞµÄ×î´óÖµ£¬²¢·ÅÔÚ×îºóµÄÎ»ÖÃ¡£ÏÂÒ»´Î±éÀúÕÒµ½µÄ×î´óÖµ·ÅÔÚÉÏÒ»´ÎÕÒµ½µÄ×î´óÖµµÄÇ°Ãæ¡£
+//	é€‰æ‹©æ’åº
+//	æ¯æ¬¡éå†æ‰¾åˆ°æœªæ‰¾è¿‡çš„æ•°ç»„å…ƒç´ ä¸­çš„æœ€å¤§å€¼ï¼Œå¹¶æ”¾åœ¨æœ€åçš„ä½ç½®ã€‚ä¸‹ä¸€æ¬¡éå†æ‰¾åˆ°çš„æœ€å¤§å€¼æ”¾åœ¨ä¸Šä¸€æ¬¡æ‰¾åˆ°çš„æœ€å¤§å€¼çš„å‰é¢ã€‚
 	public int[] choiceSort(int[] arr){
 		int index;
         for (int i = 1; i < arr.length; i++) {
-            index=0;//Ã¿Ò»´Î±ãÀûĞèÒªÖØÖÃÊı×éÏÂ±ê£¬´ÓµÚÒ»¸öÊı¿ªÊ¼±éÀú
+            index=0;//æ¯ä¸€æ¬¡ä¾¿åˆ©éœ€è¦é‡ç½®æ•°ç»„ä¸‹æ ‡ï¼Œä»ç¬¬ä¸€ä¸ªæ•°å¼€å§‹éå†
             for (int j = 1; j <= arr.length - i; j++) {
                 if (arr[j] > arr[index]) {
-                    index = j;// ²éÕÒ×î´óÖµ,»ñÈ¡×î´óÖµµÄÊı×éÏÂ±ê
+                    index = j;// æŸ¥æ‰¾æœ€å¤§å€¼,è·å–æœ€å¤§å€¼çš„æ•°ç»„ä¸‹æ ‡
                 }
             }
-            // ½»»»ÔÚÎ»ÖÃarray.length-iºÍindex(×î´óÖµ)Á½¸öÊı
+            // äº¤æ¢åœ¨ä½ç½®array.length-iå’Œindex(æœ€å¤§å€¼)ä¸¤ä¸ªæ•°
             int temp = arr[arr.length - i];
             arr[arr.length - i] = arr[index];
             arr[index] = temp;
@@ -71,21 +71,21 @@ public int[] bubbSort(int[] arr){
 	}
 
 	
-//	¹é²¢ÅÅĞò
+//	å½’å¹¶æ’åº
 	public void merge(int[] array,int start,int mid,int end){
-		int temp[] = new int[end-start+1];//ÁÙÊ±Êı×é  
+		int temp[] = new int[end-start+1];//ä¸´æ—¶æ•°ç»„  
 	      
-	    int firstArrIndex = start;//µÚÒ»¶ÎÊı×éĞòÁĞµÄÏÂ±ê  
-	    int secondArrIndex = mid+1;//µÚ¶ş¶ÎÊı×éĞòÁĞµÄÏÂ±ê  
-	    int tempArrIndex = 0;//ÁÙÊ±´æ·ÅÊı×éµÄÏÂ±ê  
+	    int firstArrIndex = start;//ç¬¬ä¸€æ®µæ•°ç»„åºåˆ—çš„ä¸‹æ ‡  
+	    int secondArrIndex = mid+1;//ç¬¬äºŒæ®µæ•°ç»„åºåˆ—çš„ä¸‹æ ‡  
+	    int tempArrIndex = 0;//ä¸´æ—¶å­˜æ”¾æ•°ç»„çš„ä¸‹æ ‡  
 	      
-	    //1.É¨ÃèµÚÒ»¸öÊı×éĞòÁĞºÍµÚ¶ş¸öÊı×éĞòÁĞ  
+	    //1.æ‰«æç¬¬ä¸€ä¸ªæ•°ç»„åºåˆ—å’Œç¬¬äºŒä¸ªæ•°ç»„åºåˆ—  
 	    while(firstArrIndex <=mid && secondArrIndex<=end){  
-	        //1.1 µ±µÚÒ»¶ÎÊı×éĞ¡ÓÚµÚ¶ş¶ÎÊı×é Î´ÅÅĞòµÄÊ×¸öÔªËØÊ±  
+	        //1.1 å½“ç¬¬ä¸€æ®µæ•°ç»„å°äºç¬¬äºŒæ®µæ•°ç»„ æœªæ’åºçš„é¦–ä¸ªå…ƒç´ æ—¶  
 	        if(array[firstArrIndex] <=array[secondArrIndex]){  
 	            temp[tempArrIndex] = array[firstArrIndex];  
 	            firstArrIndex++;  
-	        }else{//1.2 µ±µÚ¶ş¶ÎÊı×éĞ¡ÓÚµÚÒ»¶ÎÊı×é Î´ÅÅĞòµÄÊ×¸öÔªËØÊ±  
+	        }else{//1.2 å½“ç¬¬äºŒæ®µæ•°ç»„å°äºç¬¬ä¸€æ®µæ•°ç»„ æœªæ’åºçš„é¦–ä¸ªå…ƒç´ æ—¶  
 	            temp[tempArrIndex] = array[secondArrIndex];  
 	            secondArrIndex++;  
 	        }  
@@ -93,20 +93,20 @@ public int[] bubbSort(int[] arr){
 	        tempArrIndex++;  
 	    }  
 	      
-	    //2.µ±µÚÒ»¶ÎÃ»ÓĞ¸´ÖÆÍêÈ«Ê±£¬½«Ê£ÓàµÄÊı×éÈ«²¿¸´ÖÆµ½ÁÙÊ±Êı×é  
+	    //2.å½“ç¬¬ä¸€æ®µæ²¡æœ‰å¤åˆ¶å®Œå…¨æ—¶ï¼Œå°†å‰©ä½™çš„æ•°ç»„å…¨éƒ¨å¤åˆ¶åˆ°ä¸´æ—¶æ•°ç»„  
 	    while(firstArrIndex<=mid){  
 	        temp[tempArrIndex] = array[firstArrIndex];  
 	        firstArrIndex++;  
 	        tempArrIndex++;  
 	    }  
 	            
-	    //3.µ±µÚ¶ş¶ÎÃ»ÓĞ¸´ÖÆÍêÈ«Ê±£¬½²Ê£ÓàµÄÊı×éÈ«²¿¸´ÖÆµ½ÁÙÊ±Êı×é  
+	    //3.å½“ç¬¬äºŒæ®µæ²¡æœ‰å¤åˆ¶å®Œå…¨æ—¶ï¼Œè®²å‰©ä½™çš„æ•°ç»„å…¨éƒ¨å¤åˆ¶åˆ°ä¸´æ—¶æ•°ç»„  
 	    while(secondArrIndex<=end){  
 	        temp[tempArrIndex] = array[secondArrIndex];  
 	        secondArrIndex++;  
 	        tempArrIndex++;  
 	    }  	      
-	    //4.½«ÁÙÊ±Êı×é¸´ÖÆµ½Ô­Ê¼Êı×é  
+	    //4.å°†ä¸´æ—¶æ•°ç»„å¤åˆ¶åˆ°åŸå§‹æ•°ç»„  
 	    for(tempArrIndex=0,firstArrIndex=start;firstArrIndex<=end;tempArrIndex++,firstArrIndex++){  
 	        array[firstArrIndex] = temp[tempArrIndex];  
 	    }  	
@@ -114,12 +114,12 @@ public int[] bubbSort(int[] arr){
 	public void mergeSort(int[] arr){
 		for (int gap = 1; gap < arr.length; gap = 2 * gap) {  
 	        int i=0;  
-	        //¹é²¢gap³¤¶ÈµÄÁ½¸öÏàÁÚ×ÓÊı×é  
+	        //å½’å¹¶gapé•¿åº¦çš„ä¸¤ä¸ªç›¸é‚»å­æ•°ç»„  
 	        for(i=0; i+2*gap-1< arr.length; i = i + 2*gap) {  
 	            merge(arr, i, i+gap-1, i+2*gap-1);  
 	        }  
 	          
-	        // ÓàÏÂ²»×ãÁ½¸öºÏ²¢µÄ×ÓÊı×é¡£±£Ö¤µÚÒ»¸öÊı×égap´æÔÚ¡£  
+	        // ä½™ä¸‹ä¸è¶³ä¸¤ä¸ªåˆå¹¶çš„å­æ•°ç»„ã€‚ä¿è¯ç¬¬ä¸€ä¸ªæ•°ç»„gapå­˜åœ¨ã€‚  
 	        if(i + gap - 1 < arr.length){  
 	            merge(arr, i, i + gap - 1, arr.length - 1);  
 	        }  
@@ -131,12 +131,12 @@ public int[] bubbSort(int[] arr){
 		// TODO Auto-generated method stub
 		ArraySort as=new ArraySort();
 		int[] newArr=as.randomInt(100, 5);
-		System.out.println("Ô­Êı×éË³Ğò£º"+Arrays.toString(newArr));
-		//System.out.println("Ã°ÅİÅÅĞòºóÊı×éË³Ğò£º"+Arrays.toString(as.bubbSort(newArr)));
-		//System.out.println("²åÈëÅÅĞòºóÊı×éË³Ğò£º"+Arrays.toString(as.insertSort(newArr)));
-		//System.out.println("Ñ¡ÔñÅÅĞòºóµÄË³Ğò£º"+Arrays.toString(as.choiceSort(newArr)));
+		System.out.println("åŸæ•°ç»„é¡ºåºï¼š"+Arrays.toString(newArr));
+		//System.out.println("å†’æ³¡æ’åºåæ•°ç»„é¡ºåºï¼š"+Arrays.toString(as.bubbSort(newArr)));
+		//System.out.println("æ’å…¥æ’åºåæ•°ç»„é¡ºåºï¼š"+Arrays.toString(as.insertSort(newArr)));
+		//System.out.println("é€‰æ‹©æ’åºåçš„é¡ºåºï¼š"+Arrays.toString(as.choiceSort(newArr)));
 		as.mergeSort(newArr);
-		System.out.println("¹é²¢ÅÅĞòºóµÄË³Ğò£º"+Arrays.toString(newArr));
+		System.out.println("å½’å¹¶æ’åºåçš„é¡ºåºï¼š"+Arrays.toString(newArr));
 		
 
 	}
